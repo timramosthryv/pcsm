@@ -80,6 +80,27 @@
   }
   .card:hover .arrow{transform:translateX(5px);color:var(--orange)}
   .card p{font-size:14.5px;color:var(--night);margin-top:9px}
+  /* Two-step card: not itself a link, holds one link per step */
+  .card.steps-card{padding-left:14px}
+  .card.steps-card:hover{background:none;padding-left:14px}
+  .steps{margin-top:16px;display:flex;flex-direction:column;gap:2px}
+  .step{
+    display:flex;align-items:baseline;gap:12px;text-decoration:none;color:inherit;
+    padding:11px 12px;margin:0 -12px;border-radius:4px;
+    transition:background .16s ease,padding-left .16s ease;
+  }
+  .step:hover,.step:focus-visible{background:var(--mist);padding-left:20px;outline:none}
+  .step:focus-visible{box-shadow:inset 3px 0 0 var(--orange)}
+  .step-n{
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    color:var(--orange);flex:none;width:52px;
+  }
+  .step-body{flex:1}
+  .step-t{display:block;font-size:14.5px;font-weight:700;color:var(--black);line-height:1.35}
+  .step-d{display:block;font-size:13px;color:var(--steel);margin-top:1px}
+  .step .arrow{font-size:16px}
+  .step:hover .arrow{transform:translateX(4px);color:var(--orange)}
+
   .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px 20px}
   .tag{
     font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
@@ -204,6 +225,40 @@
           <span class="tag">Export <b>CSV</b></span>
         </div>
       </a>
+
+      <div class="card steps-card">
+        <div class="card-top">
+          <h2>PCSM · NPS Surveys</h2>
+        </div>
+        <p>
+          Net Promoter Score for the Performance CSM team, with promoter, passive,
+          and detractor breakdowns by employee and by coach. Two steps: build the
+          workbook, then publish it to the dashboard.
+        </p>
+        <div class="steps">
+          <a class="step" href="https://timramosthryv.github.io/pcsm-surveys/pcsm_import_tool.html">
+            <span class="step-n">Step 1</span>
+            <span class="step-body">
+              <span class="step-t">Survey Import Tool</span>
+              <span class="step-d">Turn the weekly survey PDFs into an updated workbook</span>
+            </span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="step" href="https://timramosthryv.github.io/pcsm-surveys/pcsm_nps_dashboard.html">
+            <span class="step-n">Step 2</span>
+            <span class="step-body">
+              <span class="step-t">NPS Dashboard</span>
+              <span class="step-d">Live scores from the published workbook</span>
+            </span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="tags">
+          <span class="tag">Views <b>Overview · Employee · Coach</b></span>
+          <span class="tag">Filters <b>Year · Quarter · Month</b></span>
+          <span class="tag">Export <b>Excel</b></span>
+        </div>
+      </div>
 
     </div>
 
